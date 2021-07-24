@@ -470,6 +470,8 @@
             <div id="articleContent">
                 <h2 id="问题1-同一页面存在多个video时，video无法正常播放一直在加载转圈"><a href="#问题1-同一页面存在多个video时，video无法正常播放一直在加载转圈" class="headerlink" title="问题1: 同一页面存在多个video时，video无法正常播放一直在加载转圈"></a>问题1: 同一页面存在多个video时，video无法正常播放一直在加载转圈</h2><p>解决办法:<br>    不建议同个页面使用多个video组件，建议不超过3个video，如果要实现video列表功能，请进行优化（image列表，选中时将image替换成video）</p>
 <p>具体场景:<br>    开发中可以先全部替换成 image 标签,当用户第一次点击图片时,将图片替换成 video 标签,并自动播放.点击下一个视频的时候,将上一个替换成 image 图片.</p>
+<h2 id="问题2-使用-navigator-携带参数过长会被截取"><a href="#问题2-使用-navigator-携带参数过长会被截取" class="headerlink" title="问题2: 使用 navigator 携带参数过长会被截取"></a>问题2: 使用 navigator 携带参数过长会被截取</h2><p>原因:小程序作出限制,路由传参,参数过长,会自动被截取</p>
+<p>解决办法: 获取对应id 拿到id去请求对应接口(跳转详情页面)</p>
 
                 
             </div>
