@@ -472,8 +472,18 @@
 <li>单行文本溢出,省略号(…)代替</li>
 </ol>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">white-space:nowrap;</span><br><span class="line">overflow:hidden;</span><br><span class="line">text-overflow:ellipsis;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>2.多行文本溢出</p>
+<ol start="2">
+<li>多行文本溢出</li>
+</ol>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">overflow:hidden;</span><br><span class="line">text-overflow:ellipsis;</span><br><span class="line">display:-webkit-box;</span><br><span class="line">-webkit-box-orient:vertical; /*设置对齐模式*/</span><br><span class="line">-webkit-line-clamp:2; /*设置多行的行数*/</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>css3 动态计算高宽高</li>
+</ol>
+<blockquote>
+<p>height:calc(100vh - 12px);</p>
+</blockquote>
+<p>解释:<br>    1. calc:可以动态计算css的宽高,运算符左右两侧必须加 空格,否则计算就会失效<br>    2. 视口单位: vh vw 1vh = 1% 的视口高度 1vw = 1% 的视口宽度</p>
+
                 
             </div>
             <hr/>
