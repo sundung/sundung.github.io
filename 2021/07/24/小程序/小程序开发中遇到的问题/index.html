@@ -473,6 +473,12 @@
 <h2 id="问题2-使用-navigator-携带参数过长会被截取"><a href="#问题2-使用-navigator-携带参数过长会被截取" class="headerlink" title="问题2: 使用 navigator 携带参数过长会被截取"></a>问题2: 使用 navigator 携带参数过长会被截取</h2><p>原因:小程序作出限制,路由传参,参数过长,会自动被截取</p>
 <p>解决办法: 获取对应id 拿到id去请求对应接口(跳转详情页面)</p>
 <h2 id="问题3-如果用户操作系统的控制音乐播放-暂停的按钮-页面不知道-导致页面显示是否播放的状态和真实的音乐播放状态不一致"><a href="#问题3-如果用户操作系统的控制音乐播放-暂停的按钮-页面不知道-导致页面显示是否播放的状态和真实的音乐播放状态不一致" class="headerlink" title="问题3: 如果用户操作系统的控制音乐播放/暂停的按钮,页面不知道,导致页面显示是否播放的状态和真实的音乐播放状态不一致"></a>问题3: 如果用户操作系统的控制音乐播放/暂停的按钮,页面不知道,导致页面显示是否播放的状态和真实的音乐播放状态不一致</h2><p>解决方案:<br>    1. 通过控制音频的实例 wx.getBackgroundAudioManager() 创建实例 去监听音乐的播放/暂停</p>
+<h2 id="问题4-发起网络请求报错"><a href="#问题4-发起网络请求报错" class="headerlink" title="问题4: 发起网络请求报错"></a>问题4: 发起网络请求报错</h2><pre><code>报错信息:
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"> ReferenceError: regeneratorRuntime is not defined</span><br><span class="line">at Vo.getBanner (index.js? [sm]:15)</span><br></pre></td></tr></table></figure>
+原因: 小程序不识别 async await 的语法
+
+解决办法: 开发者工具详情按钮 &gt; 本地设置 &gt; 勾选 (增强编译)
+</code></pre>
 
                 
             </div>
