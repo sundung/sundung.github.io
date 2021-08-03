@@ -479,6 +479,16 @@
 
 解决办法: 开发者工具详情按钮 &gt; 本地设置 &gt; 勾选 (增强编译)
 </code></pre>
+<h2 id="问题5-多行文本设置溢出为省略号无效"><a href="#问题5-多行文本设置溢出为省略号无效" class="headerlink" title="问题5: 多行文本设置溢出为省略号无效"></a>问题5: 多行文本设置溢出为省略号无效</h2><pre><code><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;text &gt;</span><br><span class="line">  测试数据测试数据测试数据测试数据测试数据测试数据</span><br><span class="line">&lt;/text&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">overflow: hidden;</span><br><span class="line">text-overflow: ellipsis;</span><br><span class="line">display: -webkit-box;</span><br><span class="line">-webkit-box-orient: vertical; /*设置对其模式*/</span><br><span class="line">-webkit-line-clamp: 2; /*设置多行的行数*/</span><br></pre></td></tr></table></figure>
+
+解决办法: 写成一行
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;text &gt;测试数据测试数据测试数据测试数据测试数据测试数据&lt;/text&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</code></pre>
+<h2 id="问题6-使用行高设置上下对齐无效"><a href="#问题6-使用行高设置上下对齐无效" class="headerlink" title="问题6: 使用行高设置上下对齐无效"></a>问题6: 使用行高设置上下对齐无效</h2><pre><code>原因:也是 标签换行了
+
+解决办法:写成一行
+</code></pre>
 
                 
             </div>
