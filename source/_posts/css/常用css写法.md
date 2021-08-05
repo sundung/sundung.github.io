@@ -58,3 +58,19 @@ display:-webkit-box;
         }
     }
 ```
+
+## css的 flex:1; 代表什么
+
+```
+    flex-grow:可拉伸, flex-shrink: 可压缩, flex-basis:当前元素的宽度
+
+    flex 默认值: flex-grow:0, flex-shrink:1,flex-basis:auto
+
+    flex:1 flex-grow:1, flex-shrink:1, flex-basis:0%
+
+    flex:auto flex-grow:1, flex-shrink:1, flex-basis:auto
+
+    flex:1 会导致父元素宽度自动为 100%
+
+
+```
