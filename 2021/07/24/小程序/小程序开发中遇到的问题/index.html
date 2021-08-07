@@ -492,7 +492,7 @@
 <h2 id="问题7-小程序路由传参有问题"><a href="#问题7-小程序路由传参有问题" class="headerlink" title="问题7: 小程序路由传参有问题"></a>问题7: 小程序路由传参有问题</h2><pre><code>// 不能直接将song对象作为参数传递，长度过长，会被自动截取掉
   // url: &#39;/pages/songDetail/songDetail?songPackage=&#39; + JSON.stringify(songPackage)
 </code></pre>
-
+<h2 id="问题8-setData-异步更新"><a href="#问题8-setData-异步更新" class="headerlink" title="问题8: setData 异步更新"></a>问题8: setData 异步更新</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">    问题: 请求接口更新最新数据</span><br><span class="line">    // 注意 不能直接在setData中更新,异步获取不到数据</span><br><span class="line">    // 更新歌曲连接</span><br><span class="line">        this.setData(&#123;</span><br><span class="line">          musicLink:musicLinkData.data[0].url</span><br><span class="line">        &#125;)</span><br><span class="line">    // 正确写法</span><br><span class="line">        musicLink = musicLinkData.data[0].url</span><br><span class="line">        // 更新歌曲连接</span><br><span class="line">        this.setData(&#123;</span><br><span class="line">          musicLink</span><br><span class="line">        &#125;)</span><br><span class="line"></span><br><span class="line">原因: setData 异步更新的</span><br></pre></td></tr></table></figure>
                 
             </div>
             <hr/>
