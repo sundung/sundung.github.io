@@ -498,7 +498,8 @@
 
 <p>问题10: 小程序不播放背景音乐</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// 创建控制音乐播放的实例</span><br><span class="line">this.backgroundAudioManager = wx.getBackgroundAudioManager();</span><br><span class="line">// 传入对应的音乐播放连接</span><br><span class="line">this.backgroundAudioManager.src = musicLink;</span><br><span class="line">// 注意必须要传title 否则不会播放音乐</span><br><span class="line">this.backgroundAudioManager.title = this.data.personal_fm[0].name;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
+<p>问题11: 真机调试MiniProgramError U.createEvent is not function</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">解决办法:</span><br><span class="line">为后人少走弯路,把config.js 中的host地址改成本机ipv4地址,仅限于统一局域网下,（统一wifi下）;</span><br><span class="line"></span><br><span class="line">export default &#123;</span><br><span class="line">host:&quot;http://172.20.10.5:3000&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
                 
             </div>
             <hr/>
