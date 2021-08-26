@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="uniapp常见报错信息总结, Hexo">
+    <meta name="keywords" content="vue开发中遇到的bug总结, Hexo">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>uniapp常见报错信息总结 | Hexo</title>
+    <title>vue开发中遇到的bug总结 | Hexo</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">uniapp常见报错信息总结</h1>
+                    <h1 class="description center-align post-title">vue开发中遇到的bug总结</h1>
                 </div>
             </div>
         </div>
@@ -431,8 +431,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/uniapp/">
-                                <span class="chip bg-color">uniapp</span>
+                            <a href="/tags/vue/">
+                                <span class="chip bg-color">vue</span>
                             </a>
                         
                     </div>
@@ -447,7 +447,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2021-08-20
+                    2021-08-26
                 </div>
                 
 
@@ -469,22 +469,9 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <ol>
-<li><p>问题1. App平台 v3 模式暂不支持在 js 文件中引用”static/iconfont/iconfont.css” 请改在 style 内引用</p>
-<p> 解决办法:</p>
-<p> 把main.js 引入的css 放到app.vue的style里<br> /* 导入 iconfont 字体图标 */<br> @import  ‘static/iconfont/iconfont.css’;</p>
-</li>
+<li>问题:1. vue-router 使用 addRoutes 动态添加路由跳转后页面刷新空白问题</li>
 </ol>
-<ol start="2">
-<li><p>问题2. App 上 scroll-view 不能横向滚动</p>
-<p> 解决办法:</p>
-<ol>
-<li>必须加上 block </li>
-<li>样式必须加上 white-space: nowrap;  display: inline-block;</li>
-</ol>
-<p> 具体见代码:</p>
- <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 内容区域 --&gt;</span><br><span class="line">  &lt;scroll-view class=&quot;recommendSongScroll&quot; scroll-x=&#x27;true&#x27;  enable-flex=&#x27;true&#x27;&gt;</span><br><span class="line">   /* 必加*/  &lt;block   v-for=&quot;(item,index) in recommendSong&quot; :key=&quot;index&quot;&gt;</span><br><span class="line">         &lt;view class=&quot;scrollItem&quot;&gt;</span><br><span class="line">           &lt;image class=&quot;image&quot; :src=&quot;item.picUrl&quot; mode=&quot;&quot;&gt;&lt;/image&gt;</span><br><span class="line">           &lt;text&gt;&#123;&#123;item.name&#125;&#125;&lt;/text&gt;</span><br><span class="line">         &lt;/view&gt;</span><br><span class="line">     &lt;/block&gt;</span><br><span class="line">   &lt;/scroll-view&gt;</span><br><span class="line"></span><br><span class="line">样式</span><br><span class="line"></span><br><span class="line">  // 内容区域</span><br><span class="line">  .recommendSongScroll &#123;</span><br><span class="line">    margin-top: 20rpx;</span><br><span class="line">    height: 300rpx;</span><br><span class="line">    display: flex;</span><br><span class="line">    white-space: nowrap;/* 必加*/</span><br><span class="line">    .scrollItem &#123;</span><br><span class="line">      width: 200rpx;</span><br><span class="line">      display: inline-block; /* 必加*/</span><br><span class="line">      margin-right: 20rpx;</span><br><span class="line">      .image &#123;</span><br><span class="line">        width: 200rpx;</span><br><span class="line">        height: 200rpx;</span><br><span class="line">        border-radius: 10rpx;</span><br><span class="line">      &#125;</span><br><span class="line">      text &#123;</span><br><span class="line">        font-size: 26rpx;</span><br><span class="line">        /* 多行文本溢出隐藏 省略号代替*/</span><br><span class="line">          overflow: hidden;</span><br><span class="line">          text-overflow: ellipsis;</span><br><span class="line">          display: -webkit-box;</span><br><span class="line">          -webkit-box-orient: vertical; /*设置对其模式*/</span><br><span class="line">          -webkit-line-clamp: 2; /*设置多行的行数*/</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
-</ol>
-
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">问题描述：</span><br><span class="line">在做菜单权限的时候，使用了 router.addRoutes() 方法把不同权限获取到的路由表动态的添加到路由里面去。菜单正常展示，在点击菜单跳转之后，浏览器刷新一下，页面没有跳转到 404 页面，而是变成了空白。</span><br><span class="line"></span><br><span class="line">问题原因：</span><br><span class="line">addRoutes 和 vuex 一样，在浏览器刷新后数据会丢失，因为刷新页面 Vue 会重新实例化，路由也会恢复到初始路由。</span><br><span class="line"></span><br><span class="line">解决方案：</span><br><span class="line">在页面刷新之后重新获取到通过权限修改后的路由表，然后再次使用 router.addRoutes() 方法将新路由表动态添加到路由里面去就可以了。</span><br><span class="line"></span><br><span class="line">方法一：在 App.vue 文件的 created 生命周期里面执行 router.addRoutes() 这一操作。</span><br><span class="line">方法二：利用 vuex 页面刷新数据丢失特性，在路由守卫里判断 vuex 存储的路由表数组长度是否为 0 ，为 0 则表明当前有刷新页面操作。这个时候从 localStorage 里重新获取一下有权限的路由表，然后执行 router.addRoutes() 操作。（这个方法是同事提供）</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
                 
             </div>
             <hr/>
@@ -510,7 +497,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2021/08/20/uniapp/uniapp%E5%B8%B8%E8%A7%81%E6%8A%A5%E9%94%99%E4%BF%A1%E6%81%AF%E6%80%BB%E7%BB%93/">http://example.com/2021/08/20/uniapp/uniapp%E5%B8%B8%E8%A7%81%E6%8A%A5%E9%94%99%E4%BF%A1%E6%81%AF%E6%80%BB%E7%BB%93/</a>
+                    <a href="http://example.com/2021/08/26/vue/vue%E5%BC%80%E5%8F%91%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84bug%E6%80%BB%E7%BB%93/">http://example.com/2021/08/26/vue/vue%E5%BC%80%E5%8F%91%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84bug%E6%80%BB%E7%BB%93/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -548,8 +535,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/uniapp/">
-                                    <span class="chip bg-color">uniapp</span>
+                                <a href="/tags/vue/">
+                                    <span class="chip bg-color">vue</span>
                                 </a>
                             
                         </div>
@@ -721,9 +708,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
             <div class="card">
                 <a href="/2021/08/26/vue/vue%E5%BC%80%E5%8F%91%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84bug%E6%80%BB%E7%BB%93/">
                     <div class="card-image">
@@ -741,9 +729,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-08-26
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-26
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -752,6 +740,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -770,13 +759,13 @@
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/07/27/javascript/js%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">
+                <a href="/2021/08/20/uniapp/uniapp%E5%B8%B8%E8%A7%81%E6%8A%A5%E9%94%99%E4%BF%A1%E6%81%AF%E6%80%BB%E7%BB%93/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="js基础知识">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="uniapp常见报错信息总结">
                         
-                        <span class="card-title">js基础知识</span>
+                        <span class="card-title">uniapp常见报错信息总结</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -787,7 +776,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-27
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-20
                             </span>
                         <span class="publish-author">
                             
@@ -800,8 +789,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/javascript/">
-                        <span class="chip bg-color">javascript</span>
+                    <a href="/tags/uniapp/">
+                        <span class="chip bg-color">uniapp</span>
                     </a>
                     
                 </div>
