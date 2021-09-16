@@ -478,6 +478,15 @@
 <p> 1.描述:当很多页面都使用了监听页面隐藏的事件时候,一个页面隐藏,会触发所有加载过得页面</p>
 <p> 解决方案</p>
  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">mounted() &#123;  </span><br><span class="line">    document.addEventListener(&#x27;visibilitychange&#x27;, this.handleVisiable)  </span><br><span class="line">&#125;,  </span><br><span class="line">destroyed() &#123;  </span><br><span class="line">    document.removeEventListener(&#x27;visibilitychange&#x27;, this.handleVisiable)  </span><br><span class="line">&#125;,  </span><br><span class="line">methods: &#123;  </span><br><span class="line">    handleVisiable(e) &#123;  </span><br><span class="line">    if (e.target.visibilityState === &#x27;visible&#x27;) &#123;  </span><br><span class="line">        // 要执行的方法</span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<li><p>ios 中 使用 iframe 内嵌一个活动页面,白屏,安卓正常展示</p>
+<p> 1.问题描述</p>
+<pre><code> 开发中遇到需求,需要使用组件中的iframe放置一个活动页面,结果安卓正常展示,ios白屏,
+ 页面中有个简单的切换页面展示效果的左右箭头. ios 不使用点击事件的活动页,改为全屏展示,则效果正常展示
+</code></pre>
+<p> 2.原因:</p>
+<pre><code> 该活动页面引入第三方的js库,导致ios不谦容该库的js代码,报错,引起ios白屏
+</code></pre>
+</li>
 </ol>
 
                 
